@@ -12,18 +12,29 @@ const app = express();
 app.use(express.json());
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+
 const corsOptions = {
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);
+
     if (process.env.NODE_ENV === "production") {
+      console.log("[CORS] incoming origin:", origin, "expected:", FRONTEND_URL);
       if (origin === FRONTEND_URL) return callback(null, true);
       return callback(new Error("Not allowed by CORS"));
     }
+
     return callback(null, true);
   },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "Accept"],
   credentials: true,
+  optionsSuccessStatus: 204,
 };
+
 app.use(cors(corsOptions));
+
+app.options("*", cors(corsOptions));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/customer", customerRoutes);
 app.use("/api/banker", bankerRoutes);
