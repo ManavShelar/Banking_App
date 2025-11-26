@@ -17,8 +17,8 @@ export default function App() {
               <h1 className="text-5xl font-extrabold text-slate-900 mb-4">Banking Dashboard</h1>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">Login as a customer to manage your transactions or as a banker to view customer accounts</p>
               <div className="mt-8 flex justify-center gap-4">
-                <a href="/customer-login" className="px-5 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700">Customer Login</a>
-                <a href="/banker-login" className="px-5 py-3 bg-sky-600 text-white rounded-lg shadow-md hover:bg-sky-700">Banker Login</a>
+                <Link to="/customer-login" className="px-5 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700">Customer Login</Link>
+                <Link to="/banker-login" className="px-5 py-3 bg-sky-600 text-white rounded-lg shadow-md hover:bg-sky-700">Banker Login</Link>
               </div>
             </div>
           } />
