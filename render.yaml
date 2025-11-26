@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: bank-backend
+    env: node
+    branch: main
+    plan: free
+    buildCommand: "cd backend && npm install"
+    startCommand: "cd backend && npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        value: "<YOUR_MONGO_URI>"
+      - key: TOKEN_TTL_DAYS
+        value: "7"
+      - key: FRONTEND_URL
+        value: "https://bank-frontend.onrender.com" 
+
+  - type: static
+    name: bank-frontend
+    env: static
+    branch: main
+    plan: free
+    buildCommand: "cd frontend && npm ci && npm run build"
+    publishPath: "frontend/dist"
+    envVars:
+      - key: VITE_API_URL
+        value: "https://bank-backend.onrender.com/api"

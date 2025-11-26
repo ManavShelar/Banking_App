@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root{
+  --accent: #6366f1; 
+  --muted: #94a3b8;  
+}
+
+.shadow-soft {
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+.card-glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.80));
+  backdrop-filter: blur(6px);
+}
