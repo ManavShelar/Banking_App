@@ -38,7 +38,7 @@ export default function CustomerLogin() {
             value={usernameOrEmail}
             onChange={(e) => setUE(e.target.value)}
             className="w-full p-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-indigo-200"
-            placeholder="alice or alice@example.com"
+            placeholder="client or clientone@gmail.com"
           />
 
           <label className="block text-sm text-slate-600">Password</label>

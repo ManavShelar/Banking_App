@@ -37,7 +37,7 @@ export default function BankerLogin() {
             value={usernameOrEmail}
             onChange={(e) => setUE(e.target.value)}
             className="w-full p-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-sky-200"
-            placeholder="banker1"
+            placeholder="banker1 or bankerone@gmail.com"
           />
 
           <label className="block text-sm text-slate-600">Password</label>
